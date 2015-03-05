@@ -1,0 +1,12 @@
+package edu.umsl.is3806;
+
+import java.io.IOException;
+
+public class ProgramStarter 
+{
+    public static void main(String args[]) throws IOException
+    {
+        MainMenu mm = new MainMenu();
+        mm.menu();
+    }
+}
