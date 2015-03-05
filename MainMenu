@@ -1,0 +1,59 @@
+package edu.umsl.is3806;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class MainMenu 
+{
+    public void menu() throws IOException
+    {
+        int input;
+        CalculateGrades cg = new CalculateGrades();
+        CalculateTheProduct ctp = new CalculateTheProduct();
+        FindMinMaxAvg mma = new FindMinMaxAvg();
+        FindTwelves ft = new FindTwelves();
+        
+        for(input = 0; input != 5;)
+        {
+            Scanner myinputgrabbernabber = new Scanner(System.in);
+            System.out.println("Which application would you like to run");
+            System.out.println("1. Calculate the Product");
+            System.out.println("2. Find Twelves");
+            System.out.println("3. Find the min, max, & average");
+            System.out.println("4. Calculate grades");
+            System.out.println("5. Exit");
+            if(myinputgrabbernabber.hasNextInt())
+            {
+                input = myinputgrabbernabber.nextInt();
+                if(input > 0 && input <= 5)
+                {
+                    switch(input)
+                    {
+                        case 1:
+                            ctp.Product();
+                            break;
+                        case 2:
+                            ft.Twelves();
+                            break;
+                        case 3:
+                            mma.MMA();
+                            break;
+                        case 4:
+                            cg.Grades();
+                            break;
+                        case 5:
+                            break;
+                    }
+                }
+                else if(input > 5 || input <= 0)
+                {
+                    System.out.println("\n1 through 5 only. Please try to follow the directions");
+                }
+            }
+            else
+            {
+                System.out.println("\nNo charicters. Please try to follow the directions");
+            }
+        }
+    }
+}
